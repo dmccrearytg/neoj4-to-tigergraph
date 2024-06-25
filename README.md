@@ -1,8 +1,3 @@
-# Customer 360 CoPilot Demo
+# Neo4j to TigerGraph Agent Demo
 
-Resources for teaching classes on Micro Simulators using generative AI and ChatGPT.
-A test repository to test the checkin process
-
-Public mkdocs:
-
-[https://dmccrearytg.github.io/c360/](https://dmccrearytg.github.io/c360/)
+[https://dmccrearytg.github.io/neoj4-to-tigergraph/](https://dmccrearytg.github.io/neoj4-to-tigergraph/)

@@ -1,3 +1,3 @@
 # Contact
 
-Dan.McCreary@tigergraph.com
+[Dan McCreary LinkedIn](https://www.linkedin.com/in/danmccreary/)

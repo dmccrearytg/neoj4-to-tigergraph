@@ -10,6 +10,8 @@ edit_uri: edit/master/docs/
 nav:
   - Home: index.md
   - About: about.md
+  - Architecture: architecture.md
+  - Sample Databases: sample-databases.md
   - Contact: contact.md
 
 # edit_uri: 'blob/master/docs'
