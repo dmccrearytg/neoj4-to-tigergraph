@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccrearytg.github.io/neo4j-to-tigergraph/geospatial-concepts/">
+        <link rel="canonical" href="https://dmccrearytg.github.io/neo4j-to-tigergraph/steps/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Geospatial Concepts - Neo4j To TigerGraph</title>
+        <title>Agent Steps - Neo4j To TigerGraph</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#geospatial-concepts" class="md-skip">
+        <a href="#agent-steps" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Geospatial Concepts
+              Agent Steps
             
           </span>
         </div>
@@ -288,6 +288,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-extract-schema-from-neo4j-using-apoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1: Extract Schema from Neo4j using APOC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-convert-schema-to-tigergraph-gsql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2: Convert Schema to TigerGraph GSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-test-gsql-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3: Test GSQL Syntax
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3: Test GSQL Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-convert-cypher-to-gsql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4: Convert Cypher to GSQL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-extract-data-from-neo4j" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5: Extract Data from Neo4j
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-load-data-into-tigergraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 6: Load Data into TigerGraph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-7-test-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 7: Test Queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -304,162 +381,110 @@
   
 
 
-<h1 id="geospatial-concepts">Geospatial Concepts</h1>
-<p>What are the most common region names in the US? I am thinking of terms like "Bay Area" and "Silicon Valley"</p>
-<p>Common region names in the United States often refer to geographic, cultural, economic, or historical areas that are widely recognized by both residents and people outside the region. These names can encompass cities, counties, or even larger areas and might be known for their natural features, economic activities, or cultural significance. Here are some of the most common and recognizable region names in the U.S.:</p>
+<h1 id="agent-steps">Agent Steps</h1>
+<h2 id="phase-1-extract-schema-from-neo4j-using-apoc">Phase 1: Extract Schema from Neo4j using APOC</h2>
 <ol>
 <li>
-<p><strong>Bay Area</strong>: Refers to the San Francisco Bay Area, encompassing cities like San Francisco, Oakland, and San Jose. Known for its tech industry, especially in Silicon Valley, and diverse culture.</p>
+<p>Connect to Neo4j: Establish a connection using the provided Neo4j credentials.</p>
 </li>
 <li>
-<p><strong>Silicon Valley</strong>: Located within the Bay Area, it's the global center for high technology and innovation, home to many start-ups and global technology companies.</p>
+<p>Extract Schema: Use APOC procedures to extract the schema.</p>
 </li>
 <li>
-<p><strong>Pacific Northwest</strong> (PNW): Encompasses Washington and Oregon states, known for its lush forests, mountains, and progressive cities like Seattle and Portland.</p>
+<p>CALL apoc.meta.schema()</p>
 </li>
 <li>
-<p><strong>New England</strong>: The northeastern region consisting of six states: Maine, Vermont, New Hampshire, Massachusetts, Rhode Island, and Connecticut. Known for its colonial history, autumn foliage, and coastal seafood.</p>
-</li>
-<li>
-<p><strong>The South</strong>: A broad region covering the southeastern and south-central United States, known for its unique dialects, cuisine, and music, including states like Texas, Louisiana, Georgia, and Florida.</p>
-</li>
-<li>
-<p><strong>The Midwest</strong>: Encompassing states in the north-central U.S., known for its agriculture, manufacturing, and major cities like Chicago, Detroit, and Minneapolis.</p>
-</li>
-<li>
-<p><strong>The Southwest</strong>: Includes states like Arizona, New Mexico, Texas, and parts of California and Nevada. Known for its desert landscapes, Native American cultures, and Spanish influence.</p>
-</li>
-<li>
-<p><strong>The Deep South</strong>: Often refers to the more culturally distinct southern states, including Alabama, Georgia, Louisiana, Mississippi, and South Carolina, known for their history, dialects, and cuisine.</p>
-</li>
-<li>
-<p><strong>The Rocky Mountains</strong> (The Rockies): A major mountain range spanning states like Colorado, Wyoming, Montana, and parts of New Mexico. Known for outdoor recreation and natural beauty.</p>
-</li>
-<li>
-<p><strong>The Great Plains</strong>: Spanning the central United States, known for its flatlands, agriculture, and sparse population, including states like Kansas, Nebraska, and Oklahoma.</p>
-</li>
-<li>
-<p><strong>The Gulf Coast</strong>: Refers to the coastal areas in the U.S. that border the Gulf of Mexico, including parts of Texas, Louisiana, Mississippi, Alabama, and Florida. Known for its unique culture, seafood, and hurricanes.</p>
-</li>
-<li>
-<p><strong>Appalachia</strong>: A region in the eastern U.S. known for the Appalachian Mountains, covering parts of states from New York to Mississippi. It's known for its natural beauty, coal mining history, and distinct cultural practices.</p>
-</li>
-<li>
-<p><strong>The Tri-State Area</strong>: Often refers to the area where New York, New Jersey, and Connecticut meet, particularly around New York City, known for its high population density and economic activity.</p>
-</li>
-<li>
-<p><strong>The DMV</strong>: Stands for the District of Columbia, Maryland, and Virginia, particularly the areas around Washington, D.C. Known for its political significance and diverse communities.</p>
-</li>
-<li>
-<p><strong>The Rust Belt</strong>: Refers to a region in the Northeast and Midwest, including parts of Illinois, Indiana, Michigan, Ohio, Pennsylvania, and Wisconsin, known historically for its industrial manufacturing and significant economic decline in the late 20th century.</p>
-</li>
-<li>
-<p><strong>The Sun Belt</strong>: Covers the southern and southwestern United States, known for its warm climate, growing economic opportunities, and significant population growth. It includes states like Arizona, California, Florida, Nevada, and Texas.</p>
-</li>
-<li>
-<p><strong>The Big Island</strong>: Refers to the Island of Hawaii, the largest in the Hawaiian archipelago, known for its diverse climates, volcanic activity, and natural beauty.</p>
-</li>
-<li>
-<p><strong>The Twin Cities</strong>: Refers to Minneapolis and Saint Paul in Minnesota, known for their cultural institutions, parks, and economic influence in the Midwest.</p>
-</li>
-<li>
-<p><strong>Wine Country</strong>: Primarily refers to regions in California, such as Napa Valley and Sonoma County, known for their wine production, beautiful landscapes, and tourism.</p>
-</li>
-<li>
-<p><strong>Tornado Alley</strong>: A colloquial term for the area in the central United States where tornadoes are most frequent, including parts of Texas, Oklahoma, Kansas, Nebraska, and South Dakota.</p>
-</li>
-<li>
-<p><strong>The Emerald Coast</strong>: Located on the Florida Panhandle, known for its white sandy beaches and emerald green waters, popular among tourists and locals alike.</p>
-</li>
-<li>
-<p><strong>The Research Triangle</strong>: In North Carolina, named for the triangle formed by North Carolina State University, Duke University, and the University of North Carolina at Chapel Hill. Known for its high concentration of technological companies and research institutions.</p>
-</li>
-<li>
-<p><strong>The High Plains</strong>: Covering parts of the Midwest and the West, including regions of Colorado, Kansas, Montana, Nebraska, New Mexico, Oklahoma, Texas, and Wyoming. Known for its flat terrain and as a significant part of the Great Plains.</p>
-</li>
-<li>
-<p><strong>The Gold Coast</strong>: Refers to several areas in the U.S. known for affluence and high-end living, most notably the stretch along the Atlantic coast in South Florida, including cities like Palm Beach, Boca Raton, and Miami.</p>
-</li>
-<li>
-<p><strong>The Lowcountry</strong>: Located along the coast of South Carolina and into southeastern Georgia, known for its unique culture, history, cuisine, and marshy landscapes.</p>
-</li>
-<li>
-<p><strong>Silicon Hills</strong>: Refers to the area around Austin, Texas, known for its technology and startup scene, echoing California's Silicon Valley.</p>
-</li>
-<li>
-<p><strong>The Inland Empire</strong>: Located in Southern California, encompassing Riverside and San Bernardino counties, known for its logistics, manufacturing sectors, and suburban growth.</p>
-</li>
-<li>
-<p><strong>The Outer Banks</strong>: A string of barrier islands off the coast of North Carolina, known for their natural beauty, historical sites, and as a popular vacation destination.</p>
-</li>
-<li>
-<p><strong>The Panhandle</strong>: Refers to several U.S. states' narrow, panhandle-shaped regions, but most commonly associated with the northern part of Florida, known for its beaches and conservative values.</p>
-</li>
-<li>
-<p><strong>The Four Corners</strong>: The only point in the United States shared by four states: Arizona, Colorado, New Mexico, and Utah, known for its Native American heritage and national monuments.</p>
-</li>
-<li>
-<p><strong>The Badlands</strong>: Located in South Dakota, known for its rugged terrain, striking landscapes, and significant fossil beds within the Badlands National Park.</p>
-</li>
-<li>
-<p><strong>The Central Valley</strong>: A large, fertile valley in California, known for being one of the most productive agricultural regions in the world, producing a significant portion of the nation's fruits, vegetables, and nuts.</p>
-</li>
-<li>
-<p><strong>The Hill Country</strong>: Located in central Texas, known for its rolling hills, spring-fed rivers, and a strong German cultural heritage reflected in its towns and festivals.</p>
-</li>
-<li>
-<p><strong>The Space Coast</strong>: Located on the east coast of Florida, around Cape Canaveral, known for its aerospace industry and as the site of the Kennedy Space Center.</p>
-</li>
-<li>
-<p><strong>The Cascades</strong>: A major mountain range of the western United States, extending from southern British Columbia through Washington and Oregon to Northern California, known for its breathtaking landscapes and volcanic peaks.</p>
-</li>
-<li>
-<p><strong>The Ozarks</strong>: A geographically and culturally significant area covering parts of Missouri, Arkansas, Oklahoma, and Kansas, known for its beautiful landscapes, mountains, lakes, and rivers, offering plentiful outdoor recreation opportunities.</p>
-</li>
-<li>
-<p><strong>The Great Lakes Region</strong>: Encompassing states bordering the Great Lakes --- Michigan, Ohio, New York, Pennsylvania, Wisconsin, Illinois, Indiana, and Minnesota. Known for its industrial history, natural beauty, and as a vital water source.</p>
-</li>
-<li>
-<p><strong>The Finger Lakes</strong>: A region in central New York State known for its series of long, narrow lakes, and as a premier wine-producing area with numerous wineries and vineyards.</p>
-</li>
-<li>
-<p><strong>The Piedmont</strong>: A plateau region located in the eastern United States, running between New Jersey and Alabama. It's known for its rolling hills and as a transition area between the Atlantic coastal plain and the Appalachian Mountains.</p>
-</li>
-<li>
-<p><strong>The Black Hills</strong>: Located in southwestern South Dakota and extending into Wyoming, known for Mount Rushmore, the historic town of Deadwood, and as sacred land to the Lakota Sioux.</p>
-</li>
-<li>
-<p><strong>The Mississippi Delta</strong>: Not to be confused with the river delta, it's a region in the northwest part of Mississippi known for its rich soil, agricultural output, and as the birthplace of the blues music genre.</p>
-</li>
-<li>
-<p><strong>Napa Valley</strong>: Located in California, it's one of the world's premier wine regions, known for its vineyards, wine tours, and tasting rooms.</p>
-</li>
-<li>
-<p><strong>The Smoky Mountains</strong>: Part of the Appalachian Mountains, straddling the border between North Carolina and Tennessee. Known for the Great Smoky Mountains National Park, it's renowned for its diverse flora and fauna and the beauty of its ancient mountains.</p>
-</li>
-<li>
-<p><strong>The Jersey Shore</strong>: The coastal region of New Jersey, known for its many boardwalks, amusement parks, and beaches, and as a popular summer destination.</p>
-</li>
-<li>
-<p><strong>Silicon Beach</strong>: Refers to the coastal region of Los Angeles known for its tech startup ecosystem, stretching from Santa Monica to Venice and Playa Vista.</p>
-</li>
-<li>
-<p><strong>The Redwood Coast</strong>: Located in northern California, known for its towering redwood trees, part of the Redwood National and State Parks, offering spectacular natural beauty and outdoor activities.</p>
-</li>
-<li>
-<p><strong>Chesapeake Bay</strong>: The nation's largest estuary, located in Maryland and Virginia. Known for its fishing, boating, and unique ecosystem, as well as the Chesapeake Bay Bridge.</p>
-</li>
-<li>
-<p><strong>The Mojave Desert</strong>: Spanning across California, Nevada, Utah, and Arizona, known for its iconic Joshua trees, the Mojave National Preserve, and Death Valley, the hottest place on Earth.</p>
-</li>
-<li>
-<p><strong>The Aleutian Islands</strong>: An archipelago extending west from the Alaska Peninsula, known for its rugged beauty, wildlife, and as a significant area for the fishing industry.</p>
-</li>
-<li>
-<p><strong>The Texas Hill Country</strong>: Central Texas region known for its rolling hills, spring-fed rivers, and as a significant area for wineries, outdoor recreation, and German cultural heritage.</p>
+<p>Store Schema: Save the extracted schema in a suitable format (e.g., JSON).</p>
 </li>
 </ol>
-<p>These regions highlight the geographical and cultural diversity found throughout the United States, each contributing to the country's rich mosaic of landscapes and communities.</p>
+<h2 id="phase-2-convert-schema-to-tigergraph-gsql">Phase 2: Convert Schema to TigerGraph GSQL</h2>
+<ol>
+<li>
+<p>Parse Neo4j Schema: Read the extracted schema.</p>
+</li>
+<li>
+<p>Map to GSQL Schema: Create mappings from Neo4j types and relationships to TigerGraph types and edges.</p>
+</li>
+<li>
+<p>Generate GSQL Schema: Write the GSQL schema based on the mappings.</p>
+</li>
+<li>
+<p>Store GSQL Schema: Save the generated GSQL schema for further use.</p>
+</li>
+</ol>
+<h2 id="phase-3-test-gsql-syntax">Phase 3: Test GSQL Syntax</h2>
+<ol>
+<li>
+<p>Connect to TigerGraph: Establish a connection using the provided TigerGraph credentials.</p>
+</li>
+<li>
+<p>Deploy Schema: Use the GSQL interface to deploy the schema.</p>
+</li>
+<li>
+<p>Validate Deployment: Check for syntax errors and confirm the schema is correctly deployed.</p>
+</li>
+</ol>
+<h4 id="phase-4-convert-cypher-to-gsql">Phase 4: Convert Cypher to GSQL</h4>
+<ol>
+<li>
+<p>Identify Cypher Queries: Collect Cypher queries that need to be converted.</p>
+</li>
+<li>
+<p>Parse Cypher Queries: Analyze the structure of the Cypher queries.</p>
+</li>
+<li>
+<p>Map to GSQL Queries: Create mappings from Cypher query patterns to GSQL query patterns.</p>
+</li>
+<li>
+<p>Generate GSQL Queries: Write the GSQL queries based on the mappings.</p>
+</li>
+<li>
+<p>Store GSQL Queries: Save the generated GSQL queries for further use.</p>
+</li>
+</ol>
+<h4 id="phase-5-extract-data-from-neo4j">Phase 5: Extract Data from Neo4j</h4>
+<ol>
+<li>
+<p>Connect to Neo4j: Reuse the Neo4j connection.</p>
+</li>
+<li>
+<p>Export Data: Extract data from Neo4j using Cypher queries or APOC procedures.</p>
+</li>
+<li>
+<p>CALL apoc.export.csv.all()</p>
+</li>
+<li>
+<p>Store Data: Save the extracted data in a suitable format (e.g., CSV).</p>
+</li>
+</ol>
+<h4 id="phase-6-load-data-into-tigergraph">Phase 6: Load Data into TigerGraph</h4>
+<ol>
+<li>
+<p>Connect to TigerGraph: Reuse the TigerGraph connection.</p>
+</li>
+<li>
+<p>Load Data: Use the GSQL interface to load the extracted data.</p>
+</li>
+<li>
+<p>LOAD CSV ...</p>
+</li>
+<li>
+<p>Validate Data Load: Confirm the data is correctly loaded into TigerGraph.</p>
+</li>
+</ol>
+<h4 id="phase-7-test-queries">Phase 7: Test Queries</h4>
+<ol>
+<li>
+<p>Run GSQL Queries: Execute the converted GSQL queries on the TigerGraph database.</p>
+</li>
+<li>
+<p>Validate Results: Compare the results with expected outcomes or results from Neo4j.</p>
+</li>
+<li>
+<p>Adjust and Optimize: Make necessary adjustments and optimize the queries as needed.</p>
+</li>
+</ol>
+<p>**</p>
 
 
 

@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome" class="md-skip">
+        <a href="#about-the-neo4j-to-tigergraph-agent" class="md-skip">
           Skip to content
         </a>
       
@@ -248,6 +248,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -257,6 +268,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      History
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -302,6 +341,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    <span class="md-ellipsis">
+      History
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -318,7 +374,24 @@
   
 
 
-<h1 id="welcome">Welcome</h1>
+<h1 id="about-the-neo4j-to-tigergraph-agent">About the Neo4j to TigerGraph Agent</h1>
+<p>This is a sample project to demonstrate how intelligent agents
+work with TigerGraph.  Our task is to take a running Neo4j database
+and create a running TigerGraph database from that system.</p>
+<p>Our agent will take the following steps:</p>
+<ol>
+<li>Extract the full graph schema from Neo4j using the APOC library</li>
+<li>Convert schema to TigerGraph GSQL </li>
+<li>Test GSQL syntax </li>
+<li>Convert Cypher to GSQL </li>
+<li>Extract Data from Neo4j is a series of CSV files for each vertex and edge</li>
+<li>Create loading jobs to load vertices and then edges</li>
+<li>Load data into TigerGraph </li>
+<li>Test queries on data</li>
+<li>Execute performance test</li>
+</ol>
+<h2 id="history">History</h2>
+<p>Omar  idea for this agent was </p>
 
 
 

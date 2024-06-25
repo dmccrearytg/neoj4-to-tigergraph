@@ -12,7 +12,7 @@
         <meta name="author" content="Dan McCreary">
       
       
-        <link rel="canonical" href="https://dmccrearytg.github.io/neo4j-to-tigergraph/data-model/">
+        <link rel="canonical" href="https://dmccrearytg.github.io/neo4j-to-tigergraph/architecture/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Customer 360 Data Model - Neo4j To TigerGraph</title>
+        <title>Intelligent Agent Architecture - Neo4j To TigerGraph</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#customer-360-data-model" class="md-skip">
+        <a href="#intelligent-agent-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Customer 360 Data Model
+              Intelligent Agent Architecture
             
           </span>
         </div>
@@ -288,6 +288,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overall Structure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -304,8 +321,59 @@
   
 
 
-<h1 id="customer-360-data-model">Customer 360 Data Model</h1>
-<p><img alt="" src="./img/" /></p>
+<h1 id="intelligent-agent-architecture">Intelligent Agent Architecture</h1>
+<h2 id="overall-structure">Overall Structure</h2>
+<p>The conversion</p>
+<ol>
+<li>
+<p>Input Interface:</p>
+</li>
+<li>
+<p>API or CLI to receive input (Neo4j connection details, TigerGraph connection details, etc.)</p>
+</li>
+<li>
+<p>Processing Modules:</p>
+</li>
+<li>
+<p>Schema Extraction Module: Uses Neo4j APOC procedures to extract the schema.</p>
+</li>
+<li>
+<p>Schema Conversion Module: Converts the extracted Neo4j schema to TigerGraph GSQL.</p>
+</li>
+<li>
+<p>Syntax Testing Module: Tests the generated GSQL syntax.</p>
+</li>
+<li>
+<p>Query Conversion Module: Converts Cypher queries to GSQL.</p>
+</li>
+<li>
+<p>Data Extraction Module: Extracts data from Neo4j.</p>
+</li>
+<li>
+<p>Data Loading Module: Loads data into TigerGraph.</p>
+</li>
+<li>
+<p>Query Testing Module: Tests the queries on the TigerGraph database.</p>
+</li>
+<li>
+<p>Control Flow:</p>
+</li>
+<li>
+<p>Orchestration logic to manage the workflow and data flow between modules.</p>
+</li>
+<li>
+<p>Error handling and logging mechanisms.</p>
+</li>
+<li>
+<p>User notification system (for progress updates and error reporting).</p>
+</li>
+<li>
+<p>Output Interface:</p>
+</li>
+<li>
+<p>API or CLI to provide feedback and results (schema conversion status, data loading status, etc.)</p>
+</li>
+</ol>
 
 
 
