@@ -1,0 +1,4 @@
+pyTigerGraph==1.2.9
+neo4j-driver==5.3.0
+apoc==4.4.0.6
+langchain==0.0.220
