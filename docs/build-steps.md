@@ -58,3 +58,5 @@ The log file in the Docker log should look like the following:
 http://localhost:7474/browser/
 ```
 
+![](./img/neo4j-console.png)
+
