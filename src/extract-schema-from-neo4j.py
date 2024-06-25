@@ -1,7 +1,7 @@
 from neo4j import GraphDatabase
 
 # Connect to Neo4j
-driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "password"))
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "neo4j123"))
 
 
 def extract_schema():

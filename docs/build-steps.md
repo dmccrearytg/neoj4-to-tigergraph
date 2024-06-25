@@ -1,6 +1,9 @@
 # Build Steps
 
-These steps assume you are running Neo4j locally on a Docker image.  You should have at least
+## Prerequisites
+
+These steps assume you are running Neo4j locally on a Docker image.  
+You should have at least 16GB of RAM on your local system to do this.
 
 ## Create a conda virtual environment for Python 3
 
@@ -8,6 +11,8 @@ These steps assume you are running Neo4j locally on a Docker image.  You should 
 conda create -n 'neo4j-to-tigergraph' python=3
 conda activate 
 ```
+
+Your UNIX shell should now have the "
 
 This process should take under 1 minute.
 
